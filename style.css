@@ -1,0 +1,321 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --background-colour-main: #081b29;
+    --secondary-background-colour: #112e42;
+    --text-colour: #FFFFFF;
+    --alternate-background-colour: #000000;
+    --main-colour: rgb(0, 255, 255);
+}
+
+html{
+    font-size: 80%;
+    overflow-x: hidden;
+}
+
+body{
+    background: var(--background-colour-main);
+    color: var(--text-colour);
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+/* Navigation Bar */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--background-colour-main);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header.sticky{
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0,2);
+}
+
+.navbar a{
+    font-size: 1.7rem;
+    color: var(--text-colour);
+    margin-left: 4rem;
+    transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-colour);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-colour);
+    display: none;
+}
+
+/* Home Page */
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img img{
+    width: 35vw;
+}
+
+.home-content h3{
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.home-content h3:nth-of-type(2){
+    margin-bottom: 2rem;
+}
+
+span{
+    color: var(--main-colour);
+}
+
+.home-content h1{
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content p{
+    font-size: 1.6rem;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: 0.2rem solid var(--main-colour);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-colour);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.5s ease;
+}
+
+.social-media a:hover{
+    background: var(--main-colour);
+    color: var(--secondary-background-colour);
+    box-shadow: 0 0 1rem var(--main-colour);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-colour);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-colour);
+    font-size: 1.6rem;
+    color: var(--secondary-background-colour);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.btn:hover{
+    box-shadow: none;
+}
+
+/* Experience Page */
+.experiences h2{
+    margin-bottom: 5rem;
+}
+
+.heading{
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+.experience-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10rem;
+}
+
+.experience-container .experience-box{
+    flex: 1 1 24rem;
+    background: var(--secondary-background-colour);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: 0.2rem solid var(--background-colour-main);
+    transition: 0.5s ease;
+}
+
+.experience-container .experience-box:hover{
+    border-color: var(--main-colour);
+    transform: scale(1.02);
+}
+
+.experience-box i{
+    font-size: 7rem;
+    color: var(--main-colour);
+}
+
+.experience-box a:hover{
+    cursor: pointer;
+}
+
+.experience-box h3{
+    font-size: 2.6rem;
+}
+
+.experience-box p{
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+
+.popup{
+    width: 75vw;
+    background: var(--secondary-background-colour);
+    border-radius: 6px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: var(--text-colour);
+    visibility: hidden;
+}
+
+.popup h2{
+    font-size: 4.4rem;
+}
+
+.popup p{
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, 0%) scale(1)
+}
+
+/* Media Queries */
+@media (max-width: 1200px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px){
+    .header{
+        padding: 2rem 3%;
+    }
+
+    section{
+        padding: 10rem 3% 2rem;
+    }
+
+    .experiences{
+        bottom: 7rem;
+    }
+
+    .projects{
+        padding-bottom: 7rem;
+    }
+    .contact{
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px){
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--background-colour-main);
+        border-top: 0.1rem selid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        display: none;
+    }
+
+    .navbar.active{
+        display: block;
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .home{
+        flex-direction: column;
+    }
+
+    .home-content h3{
+        font-size: 2.6rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .experiences h2{
+        margin-bottom: 3rem;
+    }
+
+    .projects h2{
+        margin-bottom: 3rem;
+    }
+
+    .project-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+    .contact form .input-box input{
+        width: 100%;
+    }
+}
+
+@media (max-width: 365px){
+    .home-img img{
+        width: 90vw;
+    }
+}
